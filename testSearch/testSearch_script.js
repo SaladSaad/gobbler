@@ -1,3 +1,5 @@
+//web deb simplified search bar tutorial: https://www.youtube.com/watch?v=TlP5WIxVirU&t=756s
+
 const userCardTemplate=document.querySelector("[data-user-template]");
 const userCardContainer=document.querySelector("[data-user-cards-container]");
 const searchInput=document.querySelector("[data-search]");
@@ -12,6 +14,7 @@ searchInput.addEventListener("input", e=>{
         user.element.classList.toggle('hide', !isVisible);
     })
 })
+
 fetch('https://jsonplaceholder.typicode.com/users')
 .then(res=>res.json())
 .then(data=>{
