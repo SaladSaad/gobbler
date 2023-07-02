@@ -32,7 +32,7 @@ const options = {
     }
   };
   
-  fetch('https://api.themoviedb.org/3/search/movie?query=fight%20club&include_adult=false&language=en&page=1', options)
+  fetch('https://api.themoviedb.org/3/search/movie?query=fight%20club&include_adult=false&language=en-US&page=1', options)
     .then(response => response.json())
     .catch(err => console.error(err))
     .then(data=>{
