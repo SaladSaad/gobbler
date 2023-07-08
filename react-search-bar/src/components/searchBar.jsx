@@ -3,6 +3,14 @@ import { FaSearch } from 'react-icons/fa';
 
 import './searchBar.css';
 
+const options = {
+	method: 'GET',
+	headers: {
+	  accept: 'application/json',
+	  Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOTNlY2ZiM2IzNGYyZGRjODhhN2Q5NmJjZjI1YmYyYyIsInN1YiI6IjY0NmVmY2QwMTEzMGJkMDFlYzk3NDgxYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uCyfm2IkCQO_h839GWVhTZNyRhLMOd78awOjffRmVvk'
+	}
+  };
+
 export const SearchBar = ({ setResults }) => {
 	const [input, setInput] = useState('');
 
@@ -16,7 +24,7 @@ export const SearchBar = ({ setResults }) => {
 						user &&
 						user.name &&
 						user.name.toLowerCase().includes(value.toLowerCase())
-					); //checks if user exists, user name exists, and and user name includes entered value. If yes, then adds user to results
+					); //checks if user exists, user name exists, and user name includes entered value. If yes, then adds user to results
 				});
 				setResults(results);
 			});
