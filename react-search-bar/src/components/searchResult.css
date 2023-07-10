@@ -1,7 +1,16 @@
 .search-result {
 	padding: 10px 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
 .search-result:hover {
 	background-color: #efefef;
+}
+.search-result img{
+	max-height: 40px;
+	max-width: 100%;
+	margin-right: 10px;
+	
 }

@@ -15,18 +15,18 @@ export const SearchBar = ({ setResults }) => {
 	const [input, setInput] = useState('');
 
 	const fetchData = (value) => {
-		fetch('https://jsonplaceholder.typicode.com/users')
-			.then((response) => response.json())
-			.then((json) => {
-				const results = json.filter((user) => {
-					return (
-						value &&
-						user &&
-						user.name &&
-						user.name.toLowerCase().includes(value.toLowerCase())
-					); //checks if user exists, user name exists, and user name includes entered value. If yes, then adds user to results
-				});
-				setResults(results);
+		fetch(`https://api.themoviedb.org/3/search/movie?query=${value}&include_adult=false&language=en-US&page=1`, options)
+		.then(response => response.json())
+		.then(json => {
+			//const movies=json.results.map(json.results.title, json.results.id)
+			const results=(json.results.filter((movie)=>{
+			  return (
+				value &&
+				movie &&
+				movie.title
+			  );
+			}));
+			setResults(results);
 			});
 	};
 
